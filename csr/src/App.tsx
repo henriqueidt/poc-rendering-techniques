@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+};
+
 function App() {
-  const [posts, setPosts] = useState<
-    { id: number; title: string; body: string }[]
-  >([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
